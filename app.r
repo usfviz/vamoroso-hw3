@@ -1,10 +1,40 @@
-library(dplyr)
+package_check <- require("dplyr")
+if (package_check == FALSE) {
+  install.packages('dplyr')
+}
+library("dplyr")
+
+package_check <- require("GGally")
+if (package_check == FALSE) {
+  install.packages('GGally')
+}
+library("GGally")
+
+package_check <- require("ggparallel")
+if (package_check == FALSE) {
+  install.packages('ggparallel')
+}
+library("ggparallel")
+
+package_check <- require("d3heatmap")
+if (package_check == FALSE) {
+  install.packages('d3heatmap')
+}
+library("d3heatmap")
+
+package_check <- require("plotly")
+if (package_check == FALSE) {
+  install.packages('plotly')
+}
+library("plotly")
+
+
 library(shiny)
-library(plotly)
 library(ggplot2)
-library(GGally)
-library(ggparallel)
-library(d3heatmap)
+
+
+
+
 
 df_fb <- read.csv('dataset_Facebook.csv', sep = ';')
 df_fb <- na.omit(df_fb)
